@@ -1,7 +1,9 @@
 import React from "react";
 
 type ProblemProps = {
+  problem: string;
   color: string;
+  record: string;
   children: string;
 }
 
@@ -17,7 +19,11 @@ class Problem extends React.Component<ProblemProps, ProblemState> {
   }
 
   public render() {
-    return <p style={{ color: this.props.color }}>{this.props.children}</p>;
+    const url = `http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=${this.props.problem}&lang=jp`;
+    return <div style={{ background: this.props.color }}>
+      <a href={url}> {this.props.children} </a>
+      <span>{this.props.record}</span>
+    </div>;
   }
 }
 

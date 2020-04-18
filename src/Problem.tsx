@@ -20,8 +20,9 @@ class Problem extends React.Component<ProblemProps, ProblemState> {
 
   public render() {
     const url = `http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=${this.props.problem}&lang=jp`;
+    const blank = '_blank'
     return <div style={{ background: this.props.color }}>
-      <a href={url}> {this.props.children} </a>
+      <a href={url} target={blank}> {this.props.children} </a>
       <span>{this.props.record}</span>
     </div>;
   }

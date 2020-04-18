@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import CounterButton from './CounterButton';
 import AOJ from './AOJ';
 
 const msgStyle = {
@@ -10,8 +9,10 @@ const msgStyle = {
 const App = () => {
   return (
     <>
-      <h1 style={msgStyle}>はじめてのReact</h1>
+      <h1 style={msgStyle}>プログラミング課題2020</h1>
       <AOJ />
+      <hr/>
+      <div>Selected by Kimio Kuramitsu</div>
     </>
   );
 }

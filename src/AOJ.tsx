@@ -67,6 +67,9 @@ class AOJ extends React.Component<any, AOJState> {
     var prevId = '';
     for (const d of data) {
       if (d.language !== 'Python3') continue;
+      if (d.submissionDate < 1587915078539) {
+        continue
+      }
       if (d.status !== 4 && !d.accuracy.startsWith('0')) {
         d.status = PRESENTATIONERROR;
       }
@@ -100,7 +103,8 @@ class AOJ extends React.Component<any, AOJState> {
         failed += 1;
       }
     }
-    this.score = `○ ${excellent} △ ${good} SCORE: ${(excellent + (good * 0.8) + (submit * 0.4)) | 0}`
+    //this.score = `○ ${excellent} △ ${good} SCORE: ${(excellent + (good * 0.8) + (submit * 0.4)) | 0}`
+    this.score = ''
     return dd;
   }
 
